@@ -97,8 +97,8 @@ float trapezium() {
 }
 
 float triangle() {
-    // s represent length of side
-    // h represent height
+    // s represents length of side
+    // h represents height
     float s;
     printf("Enter the length of side: \n");
     scanf("%f", &s);
