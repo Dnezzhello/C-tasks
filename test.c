@@ -21,7 +21,7 @@ int main() {
 
     while (1) {
         int shape;
-        printf("What kind of shape would you like?\n Please type\n '1' for circle\n '2' for equilateral triangle\n '3' for trapezium\n '4' for pentagon\n");
+        printf("What kind of shape would you like?\n Please type only a number\n '1' for circle\n '2' for equilateral triangle\n '3' for trapezium\n '4' for pentagon\n");
         scanf(" %d", &shape);
 
         // check if the input is out of range
