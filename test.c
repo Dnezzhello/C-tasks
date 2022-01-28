@@ -108,6 +108,7 @@ float triangle() {
 
 float pentagon() {
     // s means length of side
+    // Assume that a pentagon has five sides that are equal in length
     float s;
     printf("Enter the length of side: \n");
     scanf("%f", &s);
