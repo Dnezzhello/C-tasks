@@ -35,16 +35,16 @@ int main() {
         // work out an area depending on the shape
         switch (shape) {
             case 1:
-                printf("The area is %f\n\n", circle());
+                printf("The area is %.2f\n\n", circle());
                 break;
             case 2:
-                printf("The area is %f\n\n", triangle());
+                printf("The area is %.2f\n\n", triangle());
                 break;
             case 3:
-                printf("The area is %f\n\n", trapezium());
+                printf("The area is %.2f\n\n", trapezium());
                 break;
             case 4:
-                printf("The area is %f\n\n", pentagon());
+                printf("The area is %.2f\n\n", pentagon());
                 break;
         }
 
@@ -54,7 +54,7 @@ int main() {
         if (choice == 'y') {
             continue;
         } else {
-            printf("\nAlright See Yah Soon!!!");
+            printf("\nAlright See You Next Time!!!");
             break;
         }
     }
