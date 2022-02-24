@@ -2,15 +2,15 @@
 
 /*A programme to show the ASCII code corresponding to each alphabet in English*/
 int main () {
-	char c = 'A';
-	printf("--- These are uppercase letters in English ---\n\n");
-	do {
-		printf("\tThe ASCII code of character '%c' is %d\n", c, c);
-		c++;
-		if (c == '[') {
-			c = 'a';
-			printf("\n--- These are lowercase letters in English ---\n\n");
-		}
-	} while (c != 'z');
+	int main () {
+	// show all ASCII codes alongside its value
+	
+	int n = 0;
+	while (n <= 255) {
+		printf("The ASCII value of %c is %d\n", n, n);
+		n++;
+	}
+	return 0;
+}
 	
 }
