@@ -77,28 +77,28 @@ int main () {
 	// main game play
 	while (1) {
 		
-		char x_or_o, user_choice,tracking_arr[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+	    char x_or_o, user_choice,tracking_arr[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 	    int turns = 1, position, position_tracking[9];
 	    
-        // to somehow prevent unexpected error
+            // to somehow prevent unexpected error
 	    for (int i=0;i<9;i++) {
 	        position_tracking[i] = 0;
 	    }
 	    
 	    // a message to tell players that a programme has started
-		printf("Welcome to Tic-Tac-Toe game\n");
+	    printf("Welcome to Tic-Tac-Toe game\n");
 	    printf("Who wants to go first? (x or o): ");
 	    scanf(" %c", &x_or_o);
 	    
 	    // user can only input x or o
 	    while (x_or_o != 'x' && x_or_o != 'o') {
-			printf("Please only type x or o: ");
-			//printf("\n%c", x_or_o[0]);
-			scanf(" %c", &x_or_o);
-			if (x_or_o == 'x' || x_or_o == 'o') {
-				break;
-			}
+		printf("Please only type x or o: ");
+		//printf("\n%c", x_or_o[0]);
+		scanf(" %c", &x_or_o);
+		if (x_or_o == 'x' || x_or_o == 'o') {
+			break;
 		}
+	    }
 	    
         // display who will go first based on previous input
 	    if (x_or_o == 'x') {
@@ -133,7 +133,7 @@ int main () {
 	        tracking_arr[position-1] = current_marker;
 	        board(tracking_arr);
 	        
-			// check each turn if or not we have a winner and if a draw happens
+		// check each turn if or not we have a winner and if a draw happens
 	        if (have_a_winner(tracking_arr)) {
 	            printf("\nWe have a winner!!!!!!\n");
 	      		break;
@@ -150,16 +150,16 @@ int main () {
 		printf("Do you want to continue playing? (y or n): ");
 		scanf(" %c", &user_choice);
 		while (user_choice != 'y' && user_choice != 'n') {
-			printf("Please only type y or n: ");
-			scanf(" %c", &user_choice);
-			if (user_choice == 'y' || user_choice == 'n') {
-				break;
-			}
+		    printf("Please only type y or n: ");
+		    scanf(" %c", &user_choice);
+		    if (user_choice == 'y' || user_choice == 'n') {
+		        break;
+		    }
 		}
 		if (user_choice == 'n') {
-	    	break;
+	    	    break;
 		} else {
-			continue;
+		    continue;
 		}	
 	}
 	
