@@ -62,7 +62,7 @@ int have_a_winner (char arr[9]) {
     }
 }
 
-int is_in_list (int arr[], int position) {
+int is_used_position (int arr[], int position) {
     for (int i=0;i<9;i++) {
         if (arr[i] == position) {
             return 1;
@@ -72,15 +72,15 @@ int is_in_list (int arr[], int position) {
 }
 
 int main () {
+    
 	
-	char user_choice;
 	// main game play
 	while (1) {
 		
-		char X_or_O;
+		char x_or_o, user_choice,tracking_arr[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 	    int turns = 1, position, position_tracking[9];
-	    char tracking_arr[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 	    
+        // to somehow prevent unexpected error
 	    for (int i=0;i<9;i++) {
 	        position_tracking[i] = 0;
 	    }
@@ -88,19 +88,20 @@ int main () {
 	    // a message to tell players that a programme has started
 		printf("Welcome to Tic-Tac-Toe game\n");
 	    printf("Who wants to go first? (x or o): ");
-	    scanf(" %c", &X_or_O);
+	    scanf(" %c", &x_or_o);
 	    
 	    // user can only input x or o
-	    while (X_or_O != 'x' || X_or_O != 'o') {
-			printf("\nPlease only type x or o: ");
-			printf("\n%c", X_or_O);
-			scanf(" %c", &X_or_O);
-			if (X_or_O == 'x' || X_or_O == 'o') {
+	    while (x_or_o != 'x' && x_or_o != 'o') {
+			printf("Please only type x or o: ");
+			//printf("\n%c", x_or_o[0]);
+			scanf(" %c", &x_or_o);
+			if (x_or_o == 'x' || x_or_o == 'o') {
 				break;
 			}
 		}
 	    
-	    if (X_or_O == 'x') {
+        // display who will go first based on previous input
+	    if (x_or_o == 'x') {
 	        current_marker = 'x';
 	        first_marker = 'x';
 	        printf("The player with 'x' mark goes first\n");
@@ -122,15 +123,14 @@ int main () {
 	        scanf(" %d", &position);
 	
 	        // check whether or not the recent input will duplicate previous ones
-	        while (is_in_list(position_tracking, position)) {
+	        while (is_used_position(position_tracking, position)) {
 	            printf("That position is already used. Enter a new position: ");
-	            scanf("%d", &position);
+	            scanf(" %d", &position);
 	        }
 	        position_tracking[position-1] = position;
 	
 	        // update board game
 	        tracking_arr[position-1] = current_marker;
-	        printf("\n\n\n\n\n\n\n\n\n\n\n");
 	        board(tracking_arr);
 	        
 			// check each turn if or not we have a winner and if a draw happens
@@ -146,13 +146,12 @@ int main () {
 	        turns++;
 	    }
 	    
-		// prompt a user to tell us if or not they want to continue
+		// prompt an user to tell us if or not they want to continue
 		printf("Do you want to continue playing? (y or n): ");
-		scanf("%c", &user_choice);
-		while (user_choice != 'y' || user_choice != 'n') {
-			printf("\nPlease only type y or n: ");
+		scanf(" %c", &user_choice);
+		while (user_choice != 'y' && user_choice != 'n') {
+			printf("Please only type y or n: ");
 			scanf(" %c", &user_choice);
-			printf("%c\n", user_choice);
 			if (user_choice == 'y' || user_choice == 'n') {
 				break;
 			}
@@ -160,7 +159,6 @@ int main () {
 		if (user_choice == 'n') {
 	    	break;
 		} else {
-			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 			continue;
 		}	
 	}
