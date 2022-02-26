@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+</* This programme was designed and written by a newbie in C programmig, so please bear with known but unsolved bugs in my code*/>
+
 extern void board(char *arr);
 void who_is_next(int turns, char first_marker);
 extern int have_a_winner(char arr[9]);
@@ -13,12 +15,12 @@ int main () {
     while (1) {
         char x_or_o, user_choice,tracking_arr[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
         char first_marker;
-	    int turns = 1, position, position_tracking[9];
+	int turns = 1, position, position_tracking[9];
 
         // to somehow prevent unexpected error
-	    for (int i=0;i<9;i++) {
-	        position_tracking[i] = 0;
-	    }
+	for (int i=0;i<9;i++) {
+	    position_tracking[i] = 0;
+	}
 
         // a message to tell players that a programme has started
         printf("Welcome to Tic-Tac-Toe game\n");
@@ -27,11 +29,11 @@ int main () {
 
         // user can only input x or o
 	    while (x_or_o != 'x' && x_or_o != 'o') {
-		    printf("Please only type x or o: ");
-		    scanf(" %c", &x_or_o);
-		    if (x_or_o == 'x' || x_or_o == 'o') {
-			    break;
-		    }
+	        printf("Please only type x or o: ");
+		scanf(" %c", &x_or_o);
+		if (x_or_o == 'x' || x_or_o == 'o') {
+		    break;
+		}
 	    }
 
         // display who will go first based on previous input
