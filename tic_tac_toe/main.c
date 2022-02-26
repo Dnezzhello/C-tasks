@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-</* This programme was designed and written by a newbie in C programmig, so please bear with known but unsolved bugs in my code*/>
+/* This programme was designed and written by a newbie in C programmig, so please bear with known but unsolved bugs in my code*/
 
 extern void board(char *arr);
 void who_is_next(int turns, char first_marker);
