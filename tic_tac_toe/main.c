@@ -3,7 +3,7 @@
 /* This programme was designed and written by a newbie in C programmig, so please bear with known but unsolved bugs in my code*/
 
 extern void board(char *arr);
-void who_is_next(int turns, char first_marker);
+extern void who_is_next(int turns, char first_marker);
 extern int have_a_winner(char arr[9]);
 extern int is_used_position(int arr[], int position);
 
