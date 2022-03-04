@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 int *to_binary(int x) {
 
