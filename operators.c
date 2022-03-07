@@ -33,7 +33,7 @@ void arithmetic(int x, int y) {
 	printf("x - y = %d\n", x-y);
 	printf("x * y = %d\n", x*y);
 	printf("x / y = %d\n", x/y);
-	printf("x % y = %d\n", x%y);
+	printf("x %% y = %d\n", x%y);
 	printf("x++ = %d\n", x++);
 	printf("x-- = %d\n", x--);
 }
@@ -62,7 +62,7 @@ void logical(int x, int y, int z) {
 	if (x > z || y > z) {
 		printf("The condition 'x > z or y > z' is true\n");
 	} else {
-		printf("The condition 'x > z or y > z' is false");
+		printf("The condition 'x > z or y > z' is false\n");
 	}
 	
 }
@@ -97,22 +97,22 @@ void bitwise(int x, int y) {
 
 void assignment(int x, int y) {
 	printf("value of x and y are %d and %d, respectively\n", x, y);
+	printf("Note that: the value of x is arithmetically changed on each line\n");
 	printf("x += y is equal to %d\n", x+=y);
 	printf("x -= y is equal to %d\n", x-=y);
 	printf("x *= y is equal to %d\n", x*=y);
 	printf("x /= y is equal to %d\n", x/=y);
-	printf("x %= y is equal to %d\n", x%=y);
+	printf("x %%= y is equal to %d\n", x%=y);
 	printf("x <<= y is equal to %d\n", x<<=y);
 	printf("x >>= y is equal to %d\n", x>>=y);
 	printf("x &= y is equal to %d\n", x^=y);
 	printf("x ^= y is equal to %d\n", x&=y);
-	printf("x != y is equal to %d", x|=y);
+	printf("x |= y is equal to %d\n", x|=y);
 }
 
 int main () {
 	
 	int choice, x, y, z;
-	char y_n;
 	printf("-----Welcome to C Programming-----\n");
 	printf("You will learn about operators in C programming\n\n");
 	printf("1 for Arithmetic Operator \n2 for Relational Operator\n");
@@ -130,7 +130,7 @@ int main () {
 		printf("Warning! For this operator, your value should only be between 0 and 255\n");
 	}
 	
-	printf("input value for x and y to either compute future calculations or make comparison\n");
+	printf("input value for x and y to either compute future calculations or make comparisons\n");
 	printf("x = ");
 	scanf("%d", &x);
 	printf("y = ");
@@ -144,7 +144,7 @@ int main () {
 			relation(x, y);
 			break;
 		case 3:
-			printf("For this operator, you need addictional value");
+			printf("For this operator, you need addictional value\n");
 			printf("c = ");
 			scanf("%d", &z);
 			logical(x, y, z);
@@ -156,14 +156,14 @@ int main () {
 			assignment(x, y);
 			break;
 	}
-	
+	char y_n;
 	printf("Do you want to learn more?\n");
 	printf("Enter only y or n: ");
-	scanf("%c", &y_n);
+	scanf(" %c", &y_n);
 	
 	while (y_n != 'y' && y_n != 'n') {
 		printf("only enter y or n: ");
-		scanf("%c", &y_n);
+		scanf(" %c", &y_n);
 		if (y_n == 'y' || y_n == 'n') {
 			break;
 		}
