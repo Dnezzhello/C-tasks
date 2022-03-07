@@ -9,6 +9,7 @@ int *to_binary(int x) {
 		arr[i] = x%2;
 		x = x/2;
 	}
+	// reverse the array
 	for (i=8-1;i>=8/2;i--) {
 		temp = arr[i];
 		arr[i] = arr[8-1-i];
