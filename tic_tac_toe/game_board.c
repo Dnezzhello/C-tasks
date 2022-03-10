@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void board (char *arr) {
+void game_board (char *arr) {
     printf("    |   |   \n");
     printf("  %c | %c | %c \n", arr[6], arr[7], arr[8]);
     printf("    |   |   \n");
