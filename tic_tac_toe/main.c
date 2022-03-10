@@ -2,7 +2,7 @@
 
 /* This programme was designed and written by a newbie in C programmig, so please bear with known but unsolved bugs in my code*/
 
-extern void board(char * arr);
+extern void game_board(char * arr);
 extern void who_is_next(int turns, char first_marker);
 extern int have_a_winner(char arr[9]);
 extern int is_used_position(int arr[], int position);
@@ -61,7 +61,7 @@ int main() {
 
         // a message to signify the game has started
         printf("\nLet's start our game\n");
-        board(tracking_arr);
+        game_board(tracking_arr);
 
         // loops until we have a winner or a draw happens
         while (turns <= 9) {
@@ -80,7 +80,7 @@ int main() {
 
             // update board game
             tracking_arr[position - 1] = current_marker;
-            board(tracking_arr);
+            game_board(tracking_arr);
 
             // check each turn if or not we have a winner and if a draw happens
             if (have_a_winner(tracking_arr)) {
