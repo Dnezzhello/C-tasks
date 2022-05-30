@@ -20,6 +20,8 @@ int main() {
 		printf("data %d : ", i+1);
 		scanf("%f", &arr[i]);
 	}
+	
+	free(arr);
 
 	printf("\n\nThe sum and average of your data are %.2f and %.2f\n", sum(arr, n), avg(sum(arr, n), n));
 	return 0;
